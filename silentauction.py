@@ -20,11 +20,18 @@ while recursive == 0:
         #Try and except...
         try:
                 #Ask user's name and price
-                name = input("What's your name?\n")
-                price = float(input("How much are you bidding?\n"))    
+                repeatnaming = 0
+                while repeatnaming == 0:
+                        name = input("What's your name?\n")
+                        if name == "":
+                                print("Please try again with a valid input.")
+                        else:
+                                repeatnaming = 1
+                price = float(input("How much are you bidding?\n"))
                 if price == -1:
                         recursive = 1
                         print("End of auction. {} wins.".format(highest_name))
+                        repeatnaming = 0
                 elif price == 69:
                         while LOOPTHISFOREVER == 0:
                                 print("BananaBread")                
@@ -35,10 +42,13 @@ while recursive == 0:
                         print("Highest bid so far is {} at {}".format(highest_name, highest_price))
                         price = 0
                         name = 0
+                        repeatnaming = 0
                 #If it doesn't...
                 else:
                         print("That bid is too low.\nHighest bid so far is {} at {}".format(highest_name, highest_price))
+                        repeatnaming = 0
                 #This happens when the user wants to exit.
         except:
                 #Error message
                 print("You have entered something invalid. Please try again.")
+                repeatnaming = 0
