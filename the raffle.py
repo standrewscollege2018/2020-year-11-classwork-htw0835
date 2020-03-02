@@ -15,6 +15,8 @@ while keepasking == True:
         if new_particip == "Admin" or new_particip == "admin":
                 #Ends loop
                 keepasking = False
+        elif new_paticip == "":
+                print("Invalid input.")
         else:
                 #Append user input to list
                 participants.append(new_particip)
